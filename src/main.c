@@ -99,6 +99,7 @@ int cf_min_pool_size;
 int cf_res_pool_size;
 usec_t cf_res_pool_timeout;
 int cf_max_db_connections;
+int cf_max_concurrent_db_connection_attempts;
 int cf_max_user_connections;
 int cf_default_priority;
 
@@ -225,6 +226,7 @@ CF_ABS("min_pool_size", CF_INT, cf_min_pool_size, 0, "0"),
 CF_ABS("reserve_pool_size", CF_INT, cf_res_pool_size, 0, "0"),
 CF_ABS("reserve_pool_timeout", CF_TIME_USEC, cf_res_pool_timeout, 0, "5"),
 CF_ABS("max_db_connections", CF_INT, cf_max_db_connections, 0, "0"),
+CF_ABS("max_concurrent_db_connection_attempts", CF_INT, cf_max_concurrent_db_connection_attempts, 0, "1"),
 CF_ABS("max_user_connections", CF_INT, cf_max_user_connections, 0, "0"),
 CF_ABS("default_priority", CF_INT, cf_default_priority, 0, "10"),
 CF_ABS("syslog", CF_INT, cf_syslog, 0, "0"),

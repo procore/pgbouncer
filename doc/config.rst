@@ -242,6 +242,15 @@ will immediately be opened for the waiting pool.
 
 Default: unlimited
 
+max_concurrent_db_connection_attempts
+-------------------------------------
+
+Do not allow more than this many connection attempts to be made simultaneously to
+each database. Increasing this allows pgbouncer to respond more quickly to demand
+spikes.
+
+Default: 1
+
 max_user_connections
 --------------------
 

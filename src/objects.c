@@ -1150,8 +1150,8 @@ void launch_new_connection(PgPool *pool)
 	PgSocket *server;
 	int total;
 
-	/* allow only small number of connection attempts at a time */
-	if (!statlist_empty(&pool->new_server_list)) {
+	/* allow only configured number of concurrent connection attempts */
+	if (statlist_count(&pool->new_server_list) > cf_max_concurrent_db_connection_attempts) {
 		log_debug("launch_new_connection: already progress");
 		return;
 	}
