@@ -247,7 +247,8 @@ max_concurrent_db_connection_attempts
 
 Do not allow more than this many connection attempts to be made simultaneously to
 each database. Increasing this allows pgbouncer to respond more quickly to demand
-spikes.
+spikes at the cost of more load to the server. The number of live db connections may
+temporarily exceed max_db_connections if this is increased above 1.5
 
 Default: 1
 
